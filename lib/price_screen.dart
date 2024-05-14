@@ -118,18 +118,16 @@ class _PriceScreenState extends State<PriceScreen> {
         title: AnimatedTextKit(
           animatedTexts: [
             TypewriterAnimatedText(
-              'Hello world!',
+              'Coin Ticker',
               textStyle: const TextStyle(
-                fontSize: 18.0,
+                fontSize: 24.0,
                 fontWeight: FontWeight.bold,
               ),
-              speed: const Duration(milliseconds: 2000),
+              speed: const Duration(milliseconds: 400),
             ),
           ],
           totalRepeatCount: 1,
-          pause: const Duration(milliseconds: 1000),
           displayFullTextOnTap: true,
-          stopPauseOnTap: true,
         ),
         actions: <Widget>[
           apiFunctionWasTriggered
