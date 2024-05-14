@@ -6,6 +6,8 @@ import 'dart:io' show Platform;
 import 'networking.dart';
 import 'dart:convert';
 import 'dart:async';
+import 'package:animated_text_kit/animated_text_kit.dart';
+
 
 class PriceScreen extends StatefulWidget {
   const PriceScreen({super.key});
@@ -113,7 +115,22 @@ class _PriceScreenState extends State<PriceScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(28, 41, 90, 1.0),
-        title: const Text('Coin Ticker'),
+        title: AnimatedTextKit(
+          animatedTexts: [
+            TypewriterAnimatedText(
+              'Hello world!',
+              textStyle: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+              speed: const Duration(milliseconds: 2000),
+            ),
+          ],
+          totalRepeatCount: 1,
+          pause: const Duration(milliseconds: 1000),
+          displayFullTextOnTap: true,
+          stopPauseOnTap: true,
+        ),
         actions: <Widget>[
           apiFunctionWasTriggered
               ? const Center(child: CircularProgressIndicator())
